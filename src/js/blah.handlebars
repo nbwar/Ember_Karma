@@ -1,0 +1,97 @@
+<script type="text/x-handlebars">
+    <div class="container">
+      <h2>Welcome to Karma</h2>
+
+      <nav>
+        <ul>
+          <li>
+            {{#link-to 'index'}}
+              Home
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'opportunities.index'}}
+              View Opportunities
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'volunteers.signup'}}
+              Signup to Volunteer
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'volunteers.index'}}
+              View Volunteers
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'opportunities.new'}}
+              New Opportunity
+            {{/link-to}}
+          </li>
+        </ul>
+      </nav>
+
+      {{outlet}}
+    </div>
+  </script>
+
+
+
+
+
+
+
+
+  <ul>
+      <li>
+        For Volunteers:
+        <ul>
+          <li>
+            {{#link-to 'opportunities.index'}}
+              View Opportunities
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'volunteers.signup'}}
+              Signup to Volunteer
+            {{/link-to}}
+          </li>
+        </ul>
+      </li>
+      <li>
+        For Organizations:
+        <ul>
+          <li>
+            {{#link-to 'volunteers.index'}}
+              View Volunteers
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'opportunities.new'}}
+              New Opportunity
+            {{/link-to}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+
+
+
+<h3>Volunteer List</h3>
+    <ul>
+    {{#each model}}
+      <li><h4>{{name}}</h4>
+      <p><a href="mailto:shan@getkarma.co?subject=I'd%20Like%20To%20Request%20{{name}}&amp;body=Hi%20Karma,%20I%20would%20like%20to%20request%20{{name}}%20for%20a%20project.%20%20This%20project%20needs%20%5BPLEASE%20FILL%20IN%20BLANK%5D%20skills.%20">REQUEST</a></p>
+      <p>
+        <strong>Causes:</strong><br/>
+        {{causes}}
+        </p>
+        <p>
+        <strong>Skills:</strong><br/>
+        {{skill}}
+        </p>
+      </li>
+    {{/each}}
+    </ul>
